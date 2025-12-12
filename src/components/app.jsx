@@ -22,6 +22,34 @@ const MyApp = () => {
       store: store,
       // App routes
       routes: routes,
+      // Navbar settings
+      navbar: {
+        hideOnPageScroll: false,
+        iosCenterTitle: true,
+        mdCenterTitle: true,
+      },
+      version: '1.0.0',
+      on: {
+        online: () => {
+
+        },
+        offline: () => {
+          f7.dialog.alert(`No hay conexión a internet`, undefined, () => {
+            // Callback OK
+          });
+        },
+        loadSettings: () => {
+
+        },
+        exitApp: () => {
+          f7.dialog.confirm(`¿Estás seguro de que deseas salir de la aplicación?`, `Salir`, () => {
+            // Callback OK
+            window.close();
+          }, () => {
+            // Callback Cancel
+          });
+        }
+      }
   };
 
   f7ready(() => {

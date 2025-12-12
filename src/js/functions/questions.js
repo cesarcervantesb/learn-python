@@ -19,11 +19,11 @@ const Questions = {
         return masterQuestions;
     },
     getAllQuestions: function () {
-        return basicQuestions + intermediateQuestions + advanceQuestions + masterQuestions;
+        return [].concat(basicQuestions, intermediateQuestions, advanceQuestions, masterQuestions);
     },
     generateQuiz: function(type = "basic", amountQ = 15, includePractice = true, amountP = 3) {
-        let arrQuestions = [];
-        let arrPractices = [];
+        var arrQuestions = [];
+        var arrPractices = [];
         switch (type) {
             case APP_CONSTANTS.QTypes.BASIC:
                 arrQuestions = Questions.shuffleArray(basicQuestions, amountQ);
@@ -42,6 +42,8 @@ const Questions = {
                 arrPractices = Questions.shuffleArray(Practice.master, amountP);
                 break;
             default:
+                arrQuestions = Questions.shuffleArray(Questions.getAllQuestions(), amountQ);
+                arrPractices = Questions.shuffleArray(Practice.all(), amountP);
                 break;
         }
         return {
@@ -50,13 +52,13 @@ const Questions = {
         };
     },
     shuffleArray: function(inArr=[], amount = 15) {
-        let auxArr = inArr;
+        var auxArr = inArr;
         const length = auxArr.length;
-        for( var i=0; i<length; i++) {
-            const randomPos = (Math.random() * length).toString();
+        for( let i=0; i<length; i++) {
+            const randomPos = Math.floor(Math.random() * length);
             const shuffle = auxArr[i];
             auxArr[i] = auxArr[randomPos];
-            aux[randomPos] = shuffle;
+            auxArr[randomPos] = shuffle;
         }
         return auxArr.slice(0, amount);
     },

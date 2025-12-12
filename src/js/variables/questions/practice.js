@@ -23,6 +23,9 @@ const Practice = {
             message: "",
         }
     ],
+    all: () => {
+        return [].concat(Practice.basic, Practice.intermediate, Practice.advance, Practice.master);
+    },
 };
 
 export default Practice;
