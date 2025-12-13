@@ -26,7 +26,7 @@ const MyApp = () => {
       navbar: {
         hideOnPageScroll: false,
         iosCenterTitle: true,
-        mdCenterTitle: true,
+        mdCenterTitle: false,
       },
       version: '1.0.0',
       on: {
@@ -54,6 +54,7 @@ const MyApp = () => {
 
   f7ready(() => {
     // Call F7 APIs here
+    f7.setColorTheme('#5ac8fa');
   });
 
   return (
