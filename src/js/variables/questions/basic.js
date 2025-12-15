@@ -569,10 +569,125 @@ const basicQuestions = [
             },
             {
                 questionID: 1024,
-                answer: `Int()`
+                answer: `int()`
             },
         ],
         correctAnswer: 3,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1025,
+        question: `En Python. ¿Qué función convierte texto a número entero?`,
+        answers: [
+            {
+                questionID: 1025,
+                answer: `input("5")`
+            },
+            {
+                questionID: 1025,
+                answer: `type("5")`
+            },
+            {
+                questionID: 1025,
+                answer: `print("5")`
+            },
+            {
+                questionID: 1025,
+                answer: `int("5")`
+            },
+        ],
+        correctAnswer: 3,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1026,
+        question: `En Python. ¿Qué función convierte número a cadena?`,
+        answers: [
+            {
+                questionID: 1026,
+                answer: `str(13)`
+            },
+            {
+                questionID: 1026,
+                answer: `type(13)`
+            },
+            {
+                questionID: 1026,
+                answer: `print(13)`
+            },
+            {
+                questionID: 1026,
+                answer: `int("13")`
+            },
+        ],
+        correctAnswer: 0,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1027,
+        question: `En Python. ¿Cómo convertir "hola" a mayúsculas?`,
+        answers: [
+            {
+                questionID: 1027,
+                answer: `"hola".upper()`
+            },
+            {
+                questionID: 1027,
+                answer: `"HOLA".lower()`
+            },
+            {
+                questionID: 1027,
+                answer: `"hola".find()`
+            },
+            {
+                questionID: 1027,
+                answer: `"hola".index()`
+            },
+        ],
+        correctAnswer: 0,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1028,
+        question: `En Python. ¿Cómo convertir "HOLA" a minúsculas?`,
+        answers: [
+            {
+                questionID: 1028,
+                answer: `"HOLA".upper()`
+            },
+            {
+                questionID: 1028,
+                answer: `"HOLA".lower()`
+            },
+            {
+                questionID: 1028,
+                answer: `"HOLA".find()`
+            },
+            {
+                questionID: 1028,
+                answer: `"HOLA".index()`
+            },
+        ],
+        correctAnswer: 0,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1029,
+        question: `En Python. ¿Cómo manejar excepciones?`,
+        answers: [
+            {
+                questionID: 1029,
+                answer: `try { x = int("20") } except { print("Error") }`
+            },
+            {
+                questionID: 1029,
+                answer: `try: x = int("20") except: print("Error")`
+            },
+            {
+                questionID: 1029,
+                answer: `try: x = int("20") catch: print("Error")`
+            },
+            {
+                questionID: 1029,
+                answer: `try { x = int("20") } catch { print("Error") }`
+            },
+        ],
+        correctAnswer: 1,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
     },
 ];
 
