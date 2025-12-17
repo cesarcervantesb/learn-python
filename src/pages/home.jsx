@@ -45,7 +45,7 @@ const HomePage = () => (
     </Toolbar>
     {/* Page content */}
     <BlockTitle>Selecciona el nivel que quieres practicar</BlockTitle>
-    <Block strong inset>
+    <Block inset>
       <div className="grid grid-cols-3 grid-gap">
         <Button id={'basic'} tonal onClick={selectLevel}>BÁSICO</Button>
         <Button id={'intermediate'} tonal onClick={selectLevel}>INTERMEDIO</Button>

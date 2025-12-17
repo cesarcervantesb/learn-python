@@ -1,1 +1,4 @@
 /* Your app custom styles here */
+* {
+    --f7-list-item-title-white-space: wrap;
+}

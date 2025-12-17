@@ -1,4 +1,4 @@
-import { Block, BlockFooter, BlockTitle, Button, Chip, f7, Icon, List, ListItem, Navbar, NavLeft, NavTitle, Page } from "framework7-react";
+import { Block, BlockFooter, BlockTitle, Button, Chip, f7, Icon, Link, List, ListItem, Navbar, NavLeft, NavTitle, Page } from "framework7-react";
 import { useState } from "react";
 import APP_CONSTANTS from "../js/variables/constants";
 import { value } from "dom7";
@@ -81,9 +81,11 @@ const QuestionsPage = ({props}) => {
             $('#correct-answer-q' + qID).text('La respuesta correcta es: "' + correctAnswer + '"').css('display', '');
         }
     };
+    const letterAnswerOpts = ['A', 'B', 'C', 'D'];
     return (
         <Page name="questions">
             <Navbar>
+                <Link href='/' iconF7="arrow_left" reloadAll></Link>
                 <NavTitle>{navTitle}</NavTitle>
             </Navbar>
             <BlockTitle style={{justifySelf: 'center'}} medium>Preguntas {`1 al ${props.questions.length}`}</BlockTitle>
@@ -93,14 +95,14 @@ const QuestionsPage = ({props}) => {
                         <div>
                         <Block key={elem.id} inset strong outline>
                             <Block>
-                                <p>{idx + 1}. {elem.question}</p>
+                                <p><b>{idx + 1}.</b> {elem.question}</p>
                             </Block>
                             <Block style={{marginBottom: 0}}>
-                                <BlockTitle>Respuesta</BlockTitle>
+                                <BlockTitle medium>Respuesta</BlockTitle>
                                 <List strong inset dividers>
                                     {
                                         elem.answers.map((elem, idx) => (
-                                            <ListItem key={elem.questionID} radio title={elem.answer} value={idx} name={`radio-answer-${elem.questionID}`} onChange={responseQuestion}/>
+                                            <ListItem key={elem.questionID} radio title={`${elem.answer}`} value={idx} name={`radio-answer-${elem.questionID}`} onChange={responseQuestion}/>
                                         ))
                                     }
                                 </List>
