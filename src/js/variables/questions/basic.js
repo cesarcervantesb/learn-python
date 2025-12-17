@@ -300,7 +300,7 @@ const basicQuestions = [
     },
     {
         id: 1013,
-        question: `¿Cuál es la forma correcta de formatear una cadena de texto?`,
+        question: `¿Cuál es la forma correcta de darle formato una cadena de texto?`,
         answers: [
             {
                 questionID: 1013,
@@ -377,7 +377,7 @@ const basicQuestions = [
             },
             {
                 questionID: 1016,
-                answer: `and`
+                answer: `=`
             },
             {
                 questionID: 1016,
@@ -664,7 +664,7 @@ const basicQuestions = [
                 answer: `"HOLA".index()`
             },
         ],
-        correctAnswer: 0,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+        correctAnswer: 1,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
     },
     {
         id: 1029,
@@ -688,6 +688,121 @@ const basicQuestions = [
             },
         ],
         correctAnswer: 1,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1030,
+        question: `En Python. ¿Cómo se declara una lista?`,
+        answers: [
+            {
+                questionID: 1030,
+                answer: `lista = ('1', '2', '3')`
+            },
+            {
+                questionID: 1030,
+                answer: `['1', '2', '3']`
+            },
+            {
+                questionID: 1030,
+                answer: `list(['1', '2', '3'])`
+            },
+            {
+                questionID: 1030,
+                answer: `lista = ['1', '2', '3']`
+            },
+        ],
+        correctAnswer: 3,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1031,
+        question: `En Python. ¿Cómo se declara una tupla?`,
+        answers: [
+            {
+                questionID: 1031,
+                answer: `tupla = ['1', '2', '3']`
+            },
+            {
+                questionID: 1031,
+                answer: `('1', '2', '3')`
+            },
+            {
+                questionID: 1031,
+                answer: `tuple(['1', '2', '3'])`
+            },
+            {
+                questionID: 1031,
+                answer: `tupla = ('1', '2', '3')`
+            },
+        ],
+        correctAnswer: 3,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1032,
+        question: `¿Qué símbolos se utilizan para comentar varias líneas de código en Python?`,
+        answers: [
+            {
+                questionID: 1032,
+                answer: "//"
+            },
+            {
+                questionID: 1032,
+                answer: `"""`
+            },
+            {
+                questionID: 1032,
+                answer: "'"
+            },
+            {
+                questionID: 1032,
+                answer: `#`
+            },
+        ],
+        correctAnswer: 1,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1033,
+        question: `En Python. ¿Cómo se declara una diccionario?`,
+        answers: [
+            {
+                questionID: 1033,
+                answer: `diccionario = ['clave': 'valor']`
+            },
+            {
+                questionID: 1033,
+                answer: `dict({'clave': 'valor'})`
+            },
+            {
+                questionID: 1033,
+                answer: `diccionario = {}`
+            },
+            {
+                questionID: 1033,
+                answer: `diccionario = ()`
+            },
+        ],
+        correctAnswer: 2,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
+    },
+    {
+        id: 1034,
+        question: `En Python. ¿Cómo se declara un conjunto?`,
+        answers: [
+            {
+                questionID: 1034,
+                answer: `conjunto = []`
+            },
+            {
+                questionID: 1034,
+                answer: `conjunto = set()`
+            },
+            {
+                questionID: 1034,
+                answer: `conjunto = {}`
+            },
+            {
+                questionID: 1034,
+                answer: `conjunto = ()`
+            },
+        ],
+        correctAnswer: 2,   // Indice correspondiente del array 'answers' donde se encuentra la respuesta correcta
     },
 ];
 

@@ -10,7 +10,7 @@ const Practice = {
         },
         {
             id: 2,
-            message: `Realiza un script en Python que permita escribir en un archivo de texto la cadena de texto "Hola Mundo!"`
+            message: `Realiza un script en Python que permita escribir en un archivo la cadena de texto "Hola Mundo!"`
         },
     ],
     intermediate: [
