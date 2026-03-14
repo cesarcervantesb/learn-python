@@ -39,7 +39,7 @@ const QuestionsPage = ({props}) => {
             for (var question of props.questions) {
                 const qID = question.id;
                 const posCorrectAnswer = question.correctAnswer;
-                const correctAnswer = question.answers[posCorrectAnswer].answer;
+                const correctAnswer = question.answers[posCorrectAnswer].answer || question.answers[posCorrectAnswer];
                 const userAnswer = userAnswers[qID];
                 const userAnswerIsCorrect = (posCorrectAnswer === userAnswer) ? true : false;
                 if (userAnswerIsCorrect) {
@@ -91,26 +91,31 @@ const QuestionsPage = ({props}) => {
             <BlockTitle style={{justifySelf: 'center'}} medium>Preguntas {`1 al ${props.questions.length}`}</BlockTitle>
             <Block className="questions" style={{maxWidth: 720, justifySelf: 'center'}}>
                 {
-                    props.questions.map((elem, idx) => (
+                    props.questions.map((question, idx) => (
                         <div>
-                        <Block key={elem.id} inset strong outline>
+                        <Block key={question.id} inset strong outline>
                             <Block>
-                                <p><b>{idx + 1}.</b> {elem.question}</p>
+                                <p><b>{idx + 1}.</b> {question.question}</p>
+                                {
+                                    question.script ? (
+                                        <pre><b>{question.script}</b></pre>
+                                    ) : ""
+                                }
                             </Block>
                             <Block style={{marginBottom: 0}}>
                                 <BlockTitle medium>Respuesta</BlockTitle>
                                 <List strong inset dividers>
                                     {
-                                        elem.answers.map((elem, idx) => (
-                                            <ListItem key={elem.questionID} radio title={`${elem.answer}`} value={idx} name={`radio-answer-${elem.questionID}`} onChange={responseQuestion}/>
+                                        question.answers.map((elem, idx) => (
+                                            <ListItem key={question.id} radio title={`${elem.answer || elem}`} value={idx} name={`radio-answer-${question.id}`} onChange={responseQuestion}/>
                                         ))
                                     }
                                 </List>
-                                <BlockFooter id={`eval-q${elem.id}`} style={{display: 'none'}}>
+                                <BlockFooter id={`eval-q${question.id}`} style={{display: 'none'}}>
                                     <div className="grid grid-cols-1 grid-gap">
-                                        <Chip id={`result-q${elem.id}`} style={{display: 'none'}} text="Respuesta incorrecta" color="red"><Icon f7="xmark" slot="media" color="red"></Icon></Chip>
-                                        <Chip id={`correct-q${elem.id}`} style={{display: 'none'}} text="Respuesta correcta" color="green"><Icon f7="checkmark" slot="media" color="green"></Icon></Chip>
-                                        <Chip id={`correct-answer-q${elem.id}`} style={{display: 'none'}} text={`La respuesta correcta es: `}/>
+                                        <Chip id={`result-q${question.id}`} style={{display: 'none'}} text="Respuesta incorrecta" color="red"><Icon f7="xmark" slot="media" color="red"></Icon></Chip>
+                                        <Chip id={`correct-q${question.id}`} style={{display: 'none'}} text="Respuesta correcta" color="green"><Icon f7="checkmark" slot="media" color="green"></Icon></Chip>
+                                        <Chip id={`correct-answer-q${question.id}`} style={{display: 'none'}} text={`La respuesta correcta es: `}/>
                                     </div>
                                 </BlockFooter>
                             </Block>

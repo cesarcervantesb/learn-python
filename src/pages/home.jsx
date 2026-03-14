@@ -49,8 +49,8 @@ const HomePage = () => (
       <div className="grid grid-cols-3 grid-gap">
         <Button id={'basic'} tonal onClick={selectLevel}>BÁSICO</Button>
         <Button id={'intermediate'} tonal onClick={selectLevel}>INTERMEDIO</Button>
-        <Button id={'advance'} tonal onClick={selectLevel}>AVANZADO</Button>
-        <Button id={'master'} tonal onClick={selectLevel}>MASTER</Button>
+        {/* <Button id={'advance'} tonal onClick={selectLevel}>AVANZADO</Button> */}
+        {/* <Button id={'master'} tonal onClick={selectLevel}>MASTER</Button> */}
         <Button id={'all'} tonal onClick={selectLevel}>TODOS</Button>
       </div>
     </Block>
